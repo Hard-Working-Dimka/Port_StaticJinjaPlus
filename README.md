@@ -30,11 +30,6 @@
 шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
 копируется в образ докера.
 
-Для сборки образа необходимо воспользоваться аргументами:
-
-* STATICJINJAPLUS_VERSION
-* STATICJINJAPLUS_CHECKSUM
-
 Перейдите в каталог, в котором находится `Dockerfile-x.x.x-ubuntu` и каталог `templates` и введите команду:
 
 **Для 0.1.0**
@@ -57,11 +52,6 @@ docker build -f Dockerfile-x.x.x-ubuntu --build-arg STATICJINJAPLUS_VERSION=0.1.
 шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
 копируется в образ докера.
 
-Для сборки образа необходимо воспользоваться аргументами:
-
-* STATICJINJAPLUS_VERSION
-* STATICJINJAPLUS_CHECKSUM
-
 Перейдите в каталог, в котором находится `Dockerfile-x.x.x-slim` и каталог `templates` и введите команду:
 
 **Для 0.1.0**
@@ -79,7 +69,27 @@ docker build -f Dockerfile-x.x.x-slim --build-arg STATICJINJAPLUS_VERSION=0.1.1 
 
 ## develop — на базе ubuntu
 
+Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-ubuntu` находились в одном каталоге. Каталог с
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
+
+Перейдите в каталог, в котором находится `Dockerfile-develop-ubuntu` и каталог `templates` и введите команду:
+
+```shell
+docker build -f Dockerfile-develop-ubuntu -t static_jinja_plus:develop-ubuntu .
+```
+
 ## develop-slim — на базе python-slim
+
+Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-slim` находились в одном каталоге. Каталог с
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
+
+Перейдите в каталог, в котором находится `Dockerfile-develop-slim` и каталог `templates` и введите команду:
+
+```shell
+docker build -f Dockerfile-develop-slim -t static_jinja_plus:develop-slim .
+```
 
 ## latest — на базе ubuntu
 

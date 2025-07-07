@@ -5,7 +5,6 @@ ARG STATICJINJAPLUS_CHECKSUM
 
 WORKDIR /app
 
-
 ADD --checksum=sha256:${STATICJINJAPLUS_CHECKSUM} https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/${STATICJINJAPLUS_VERSION}.tar.gz /tmp/app.tar.gz
 RUN tar xzf /tmp/app.tar.gz --strip-components=1 -C /app && rm /tmp/app.tar.gz
 
