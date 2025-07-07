@@ -27,14 +27,15 @@
 ## 0.1.0 ИЛИ 0.1.1 — на базе ubuntu
 
 Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-x.x.x-ubuntu` находились в одном каталоге. Каталог с
-шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог копируется в образ докера. 
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
 
 Для сборки образа необходимо воспользоваться аргументами:
 
 * STATICJINJAPLUS_VERSION
 * STATICJINJAPLUS_CHECKSUM
 
-Перейдите в каталог, в котором находится докерфайл и каталог `templates` и введите команду:
+Перейдите в каталог, в котором находится `Dockerfile-x.x.x-ubuntu` и каталог `templates` и введите команду:
 
 **Для 0.1.0**
 
@@ -52,7 +53,29 @@ docker build -f Dockerfile-x.x.x-ubuntu --build-arg STATICJINJAPLUS_VERSION=0.1.
 
 ## 0.1.0-slim ИЛИ 0.1.1-slim — на базе python-slim
 
+Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-x.x.x-slim` находились в одном каталоге. Каталог с
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
 
+Для сборки образа необходимо воспользоваться аргументами:
+
+* STATICJINJAPLUS_VERSION
+* STATICJINJAPLUS_CHECKSUM
+
+Перейдите в каталог, в котором находится `Dockerfile-x.x.x-slim` и каталог `templates` и введите команду:
+
+**Для 0.1.0**
+
+```shell
+docker build -f Dockerfile-x.x.x-slim --build-arg STATICJINJAPLUS_VERSION=0.1.0 --build-arg STATICJINJAPLUS_CHECKSUM=3555bcfd670e134e8360ad934cb5bad1bbe2a7dad24ba7cafa0a3bb8b23c6444 -t static_jinja_plus:0.1.0-slim .
+
+```
+
+**Для 0.1.1**
+
+```shell
+docker build -f Dockerfile-x.x.x-slim --build-arg STATICJINJAPLUS_VERSION=0.1.1 --build-arg STATICJINJAPLUS_CHECKSUM=30d9424df1eddb73912b0e2ad5375fa2c876c8e30906bec91952dfb75dcf220b -t static_jinja_plus:0.1.1-slim .
+```
 
 ## develop — на базе ubuntu
 
