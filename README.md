@@ -12,6 +12,8 @@
 
 Образы latest и slim — это последние версии приложения StaticJinjaPlus.
 
+При успешной сборке образа, в терминале будут отсутствовать какие-либо ошибки.
+
 <!-- TOC -->
 
 * [Порт для приложения StaticJinjaPlus](#порт-для-приложения-staticjinjaplus)
@@ -93,4 +95,38 @@ docker build -f Dockerfile-develop-slim -t static_jinja_plus:develop-slim .
 
 ## latest — на базе ubuntu
 
-## slim — на базе python-slim
+Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-latest-ubuntu` находились в одном каталоге.
+Каталог с
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
+
+Так же вом потребуется перейти на [страницу с тегами](https://github.com/MrDave/StaticJinjaPlus/tags) и посмотреть номер
+последнего тега. (Например, `0.1.1``)
+
+Перейдите в каталог, в котором находится `Dockerfile-develop-latest-ubuntu` и каталог `templates` и введите команду:
+
+```shell
+docker build -f Dockerfile-develop-latest-ubuntu --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:latest-ubuntu .
+```
+
+Необходимо вставить номер версии последнего тега вместо `<REPLACE_ME>`, например:
+`STATICJINJAPLUS_VERSION=0.1.1`
+
+## latest — на базе python-slim
+
+Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-latest-slim` находились в одном каталоге. Каталог
+с
+шаблонами **обязательно** должен называться `templates`. Желательно, отсутствие посторонних файлов, так как весь каталог
+копируется в образ докера.
+
+Так же вом потребуется перейти на [страницу с тегами](https://github.com/MrDave/StaticJinjaPlus/tags) и посмотреть номер
+последнего тега. (Например, `0.1.1``)
+
+Перейдите в каталог, в котором находится `Dockerfile-develop-latest-slim` и каталог `templates` и введите команду:
+
+```shell
+docker build -f Dockerfile-develop-latest-slim --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:latest-slim .
+```
+
+Необходимо вставить номер версии последнего тега вместо `<REPLACE_ME>`, например:
+`STATICJINJAPLUS_VERSION=0.1.1` 
