@@ -93,7 +93,7 @@ docker build -f Dockerfile-develop-ubuntu -t static_jinja_plus:develop-ubuntu .
 docker build -f Dockerfile-develop-slim -t static_jinja_plus:develop-slim .
 ```
 
-## latest — на базе ubuntu
+## любая версия — на базе ubuntu (без проверки хеша)
 
 Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-latest-ubuntu` находились в одном каталоге.
 Каталог с
@@ -106,13 +106,13 @@ docker build -f Dockerfile-develop-slim -t static_jinja_plus:develop-slim .
 Перейдите в каталог, в котором находится `Dockerfile-develop-latest-ubuntu` и каталог `templates` и введите команду:
 
 ```shell
-docker build -f Dockerfile-develop-latest-ubuntu --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:latest-ubuntu .
+docker build -f Dockerfile-develop-my_vers-ubuntu --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:<REPLACE_ME>-ubuntu .
 ```
 
 Необходимо вставить номер версии последнего тега вместо `<REPLACE_ME>`, например:
 `STATICJINJAPLUS_VERSION=0.1.1`
 
-## latest — на базе python-slim
+## любая версия — на базе python-slim (без проверки хеша)
 
 Для сборки необходимо чтобы каталог с шаблонами и `Dockerfile-develop-latest-slim` находились в одном каталоге. Каталог
 с
@@ -125,7 +125,7 @@ docker build -f Dockerfile-develop-latest-ubuntu --build-arg STATICJINJAPLUS_VER
 Перейдите в каталог, в котором находится `Dockerfile-develop-latest-slim` и каталог `templates` и введите команду:
 
 ```shell
-docker build -f Dockerfile-develop-latest-slim --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:latest-slim .
+docker build -f Dockerfile-develop-my_vers-slim --build-arg STATICJINJAPLUS_VERSION=<REPLACE_ME> -t static_jinja_plus:<REPLACE_ME>-slim .
 ```
 
 Необходимо вставить номер версии последнего тега вместо `<REPLACE_ME>`, например:
